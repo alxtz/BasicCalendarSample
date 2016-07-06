@@ -6,6 +6,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class CalendarActivity extends AppCompatActivity
 {
@@ -22,7 +23,7 @@ public class CalendarActivity extends AppCompatActivity
         Log.d( "MyLog" , "Calendar Year is : " + yearGot );
 
         setYearMonthDay();
-        setDays();
+        //setDays();
 
         getStatusBarHeight();
         getScreenWidth();
@@ -34,17 +35,19 @@ public class CalendarActivity extends AppCompatActivity
         setCalendarRow4();
         setCalendarRow5();
         setCalendarRow6();
+
+        setCalendar();
     }
 
 
     //2015年1月1日 是 禮拜四
-    static final int DAY_2015_1_1 = 4;
+    static final int DAY_2016_1_1 = 5;
 
     //每個月的長度
     int[] MONTH_LENGTH_LIST = {31 , 0 , 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31};
 
     //設定一個int紀錄我們自從2015/1/1後過了幾天，方便換算星期幾
-    int daysAfter2015_1_1 = 0;
+    int daysAfter2016_1_1 = 0;
 
     int monthGot;
     int yearGot;
@@ -69,12 +72,12 @@ public class CalendarActivity extends AppCompatActivity
         //一直加月份的天數，直到指定的月份
         for(int i=0; i<monthGot; ++i)
         {
-            daysAfter2015_1_1 += MONTH_LENGTH_LIST[i];
+            daysAfter2016_1_1 += MONTH_LENGTH_LIST[i];
         }
 
-        Log.d( "MyLog" , "在"+yearGot+"年"+monthGot+"月底時，過了"+daysAfter2015_1_1+"天");
+        Log.d( "MyLog" , "在"+yearGot+"年"+monthGot+"月底時，過了"+daysAfter2016_1_1+"天");
 
-        int whatDay = (daysAfter2015_1_1 + DAY_2015_1_1)%7;
+        int whatDay = (daysAfter2016_1_1 + DAY_2016_1_1)%7;
 
         Log.d( "MyLog" , +yearGot+"年"+(monthGot+1)+"月初，是禮拜"+whatDay);
     }
@@ -410,6 +413,63 @@ public class CalendarActivity extends AppCompatActivity
 
     public void setCalendar()
     {
+        Log.d( "MyLog" , "開始setCalendar" );
+        Log.d( "MyLog" , "月份為"+monthGot+"，年份為"+yearGot );
+
+
+        //一直加月份的天數，直到指定的月份
+        for(int i=0; i<monthGot-1; ++i)
+        {
+            daysAfter2016_1_1 += MONTH_LENGTH_LIST[i];
+        }
+
+        Log.d( "MyLog" , "在"+yearGot+"年"+(monthGot-1)+"月底時，過了"+daysAfter2016_1_1+"天");
+
+        int whatDay = (daysAfter2016_1_1 + DAY_2016_1_1)%7;
+
+        Log.d( "MyLog" , yearGot+"年"+(monthGot)+"月初，是禮拜"+whatDay);
+
+        int textDateCount = 1 + whatDay;
+
+        //設定好當月的日期
+        for(int i=1; i<=MONTH_LENGTH_LIST[monthGot-1]; ++i)
+        {
+            String foo = "DateText" + textDateCount;
+
+            Log.d( "MyLog" , "使用ID為"+foo);
+
+            int resID = getResources().getIdentifier(foo , "id" , getPackageName());
+
+            TextView someDateText = (TextView) findViewById(resID);
+            someDateText.setText(Integer.toString(i));
+
+            textDateCount++;
+        }
+
+        int textDateCountLast = whatDay;
+
+        //設定上個月的日期，1月會有問題
+        for(int i = MONTH_LENGTH_LIST[monthGot-2]; 1>0 ;i--)
+        {
+            if(textDateCountLast>0)
+            {
+                String foo = "DateText" + textDateCountLast;
+                Log.d( "MyLog" , "使用ID為"+foo);
+                int resID = getResources().getIdentifier(foo , "id" , getPackageName());
+                TextView someDateText = (TextView) findViewById(resID);
+                someDateText.setText(Integer.toString(i));
+
+                textDateCountLast--;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        //設定下個月的日期，12月會有問題
+        //int i = whatDay + MONTH_LENGTH_LIST[monthGot-1]+1;
+        //Log.d( "MyLog" , "下個月的開始dateBlock編號為"+i);
 
     }
 }

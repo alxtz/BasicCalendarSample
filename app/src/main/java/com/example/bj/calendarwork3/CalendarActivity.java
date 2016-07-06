@@ -1,10 +1,13 @@
 package com.example.bj.calendarwork3;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -23,6 +26,7 @@ public class CalendarActivity extends AppCompatActivity
         Log.d( "MyLog" , "Calendar Year is : " + yearGot );
 
         setYearMonthDay();
+        setMonthYearDisplay();
         //setDays();
 
         getStatusBarHeight();
@@ -410,7 +414,6 @@ public class CalendarActivity extends AppCompatActivity
         dayBlock7.setLayoutParams(params7);
     }
 
-
     public void setCalendar()
     {
         Log.d( "MyLog" , "開始setCalendar" );
@@ -482,5 +485,45 @@ public class CalendarActivity extends AppCompatActivity
             newMonthDate++;
         }
 
+    }
+
+    public void setMonthYearDisplay()
+    {
+        TextView monthTextView = (TextView) findViewById(R.id.MonthDisplay);
+        monthTextView.setText(Integer.toString(monthGot));
+
+        TextView yearTextView = (TextView) findViewById(R.id.YearDisplay);
+        yearTextView.setText(Integer.toString(yearGot));
+    }
+
+    //左右按鈕的功能
+    public void arrowLeft(View v)
+    {
+        Log.d("MyLog" , "Pressed Left");
+
+        Intent calendarActivityIntent = new Intent(this , CalendarActivity.class);
+
+        String newMonthGot = Integer.toString(monthGot - 1);
+        String newYearGot = Integer.toString(yearGot);
+
+        calendarActivityIntent.putExtra("INPUT_MONTH" , newMonthGot);
+        calendarActivityIntent.putExtra("INPUT_YEAR" , newYearGot);
+
+        startActivity(calendarActivityIntent);
+    }
+
+    public void arrowRight(View v)
+    {
+        Log.d("MyLog" , "Pressed Right");
+
+        Intent calendarActivityIntent = new Intent(this , CalendarActivity.class);
+
+        String newMonthGot = Integer.toString(monthGot+1);
+        String newYearGot = Integer.toString(yearGot);
+
+        calendarActivityIntent.putExtra("INPUT_MONTH" , newMonthGot);
+        calendarActivityIntent.putExtra("INPUT_YEAR" , newYearGot);
+
+        startActivity(calendarActivityIntent);
     }
 }

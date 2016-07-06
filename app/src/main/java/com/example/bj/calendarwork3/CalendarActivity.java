@@ -470,6 +470,17 @@ public class CalendarActivity extends AppCompatActivity
         //設定下個月的日期，12月會有問題
         //int i = whatDay + MONTH_LENGTH_LIST[monthGot-1]+1;
         //Log.d( "MyLog" , "下個月的開始dateBlock編號為"+i);
+        int newMonthDate = 1;
+
+        for(int i = whatDay + MONTH_LENGTH_LIST[monthGot-1]+1; i<=42; ++i)
+        {
+            String foo = "DateText" + i;
+            Log.d( "MyLog" , "使用ID為"+foo);
+            int resID = getResources().getIdentifier(foo , "id" , getPackageName());
+            TextView someDateText = (TextView) findViewById(resID);
+            someDateText.setText(Integer.toString(newMonthDate));
+            newMonthDate++;
+        }
 
     }
 }

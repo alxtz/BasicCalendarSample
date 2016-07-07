@@ -35,5 +35,7 @@ public class MainActivity extends AppCompatActivity
         calendarActivityIntent.putExtra("INPUT_YEAR" , yearGot);
 
         startActivity(calendarActivityIntent);
+
+        finish();
     }
 }

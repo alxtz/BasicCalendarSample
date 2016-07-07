@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -25,7 +26,8 @@ public class CalendarActivity extends AppCompatActivity
         Log.d( "MyLog" , "Calendar Month is : " + monthGot );
         Log.d( "MyLog" , "Calendar Year is : " + yearGot );
 
-        setYearMonthDay();
+        setYearMonthDay();//設定閏年的2月天數
+        setDays();
         setMonthYearDisplay();
         //setDays();
 
@@ -41,11 +43,20 @@ public class CalendarActivity extends AppCompatActivity
         setCalendarRow6();
 
         setCalendar();
+
+        if( yearGot==2016 && monthGot==1)
+        {
+            disableArrowLeft();
+        }
     }
 
 
     //2015年1月1日 是 禮拜四
     static final int DAY_2016_1_1 = 5;
+    static final int DEFAULT_YEAR_2016 = 2016;
+
+    //今年1月1日是禮拜幾
+    int THIS_YEAR_1_1;
 
     //每個月的長度
     int[] MONTH_LENGTH_LIST = {31 , 0 , 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31};
@@ -56,6 +67,9 @@ public class CalendarActivity extends AppCompatActivity
     int monthGot;
     int yearGot;
 
+    //紀錄是否為閏年
+    boolean isLeapYear;
+
     //我們這邊最小年月，使用2015年1月
     public void setYearMonthDay()
     {
@@ -63,27 +77,67 @@ public class CalendarActivity extends AppCompatActivity
         {
             Log.d( "MyLog" , "Leap Year" );
             MONTH_LENGTH_LIST[1] = 29;
+            isLeapYear = true;
         }
         else
         {
             Log.d( "MyLog" , "Average Year" );
             MONTH_LENGTH_LIST[1] = 28;
+            isLeapYear = false;
+        }
+    }
+
+    private boolean isLeap(int inputYear)
+    {
+        if( (inputYear%400==0) || ( inputYear%4==0 && inputYear%100!=0 ) )
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
     public void setDays()
     {
+        Log.d("SetDayLog" , "This year is "+yearGot);
+        Log.d("SetDayLog" , "This month is "+monthGot);
+
+        for(int i = 2016; i < yearGot; ++i)
+        {
+            Log.d("SetDayLog" , "Inside for loop");
+            if(isLeap(i)==true)
+            {
+                daysAfter2016_1_1+=366;
+                Log.d("SetDayLog" , "Add a Leap Year");
+            }
+            else
+            {
+                daysAfter2016_1_1+=365;
+                Log.d("SetDayLog" , "Add an Average Year");
+            }
+        }
+
+        Log.d("SetDayLog" , "Days after 2016/1/1 : "+daysAfter2016_1_1);
+
         //一直加月份的天數，直到指定的月份
-        for(int i=0; i<monthGot; ++i)
+        for(int i=0; i<monthGot-1; ++i)
         {
             daysAfter2016_1_1 += MONTH_LENGTH_LIST[i];
         }
 
-        Log.d( "MyLog" , "在"+yearGot+"年"+monthGot+"月底時，過了"+daysAfter2016_1_1+"天");
+        if((monthGot-1)==0)
+        {
+            Log.d( "SetDayLog" , "在"+(yearGot-1)+"年"+(12)+"月底時，過了"+daysAfter2016_1_1+"天");
+        }
+        else
+        {
+            Log.d("SetDayLog", "在" + yearGot + "年" + (monthGot - 1) + "月底時，過了" + daysAfter2016_1_1 + "天");
+        }
+        //int whatDay = (daysAfter2016_1_1 + DAY_2016_1_1)%7;
 
-        int whatDay = (daysAfter2016_1_1 + DAY_2016_1_1)%7;
-
-        Log.d( "MyLog" , +yearGot+"年"+(monthGot+1)+"月初，是禮拜"+whatDay);
+        //Log.d( "SetDayLog" , +yearGot+"年"+(monthGot)+"月初，是禮拜"+whatDay);
     }
 
 
@@ -421,16 +475,18 @@ public class CalendarActivity extends AppCompatActivity
 
 
         //一直加月份的天數，直到指定的月份
+        /*
         for(int i=0; i<monthGot-1; ++i)
         {
             daysAfter2016_1_1 += MONTH_LENGTH_LIST[i];
         }
 
         Log.d( "MyLog" , "在"+yearGot+"年"+(monthGot-1)+"月底時，過了"+daysAfter2016_1_1+"天");
+        */
 
         int whatDay = (daysAfter2016_1_1 + DAY_2016_1_1)%7;
 
-        Log.d( "MyLog" , yearGot+"年"+(monthGot)+"月初，是禮拜"+whatDay);
+        Log.d( "SetDayLog" , yearGot+"年"+(monthGot)+"月初，是禮拜"+whatDay);
 
         int textDateCount = 1 + whatDay;
 
@@ -452,24 +508,46 @@ public class CalendarActivity extends AppCompatActivity
         int textDateCountLast = whatDay;
 
         //設定上個月的日期，1月會有問題
-        for(int i = MONTH_LENGTH_LIST[monthGot-2]; 1>0 ;i--)
+        if(monthGot==1)
         {
-            if(textDateCountLast>0)
+            for (int i = MONTH_LENGTH_LIST[11]; 1 > 0; i--)
             {
-                String foo = "DateText" + textDateCountLast;
-                Log.d( "MyLog" , "使用ID為"+foo);
-                int resID = getResources().getIdentifier(foo , "id" , getPackageName());
-                TextView someDateText = (TextView) findViewById(resID);
-                someDateText.setText(Integer.toString(i));
+                if (textDateCountLast > 0)
+                {
+                    String foo = "DateText" + textDateCountLast;
+                    Log.d("MyLog", "使用ID為" + foo);
+                    int resID = getResources().getIdentifier(foo, "id", getPackageName());
+                    TextView someDateText = (TextView) findViewById(resID);
+                    someDateText.setText(Integer.toString(i));
 
-                textDateCountLast--;
-            }
-            else
-            {
-                break;
+                    textDateCountLast--;
+                }
+                else
+                {
+                    break;
+                }
             }
         }
+        else
+        {
+            for (int i = MONTH_LENGTH_LIST[monthGot - 2]; 1 > 0; i--)
+            {
+                if (textDateCountLast > 0)
+                {
+                    String foo = "DateText" + textDateCountLast;
+                    Log.d("MyLog", "使用ID為" + foo);
+                    int resID = getResources().getIdentifier(foo, "id", getPackageName());
+                    TextView someDateText = (TextView) findViewById(resID);
+                    someDateText.setText(Integer.toString(i));
 
+                    textDateCountLast--;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
         //設定下個月的日期，12月會有問題
         //int i = whatDay + MONTH_LENGTH_LIST[monthGot-1]+1;
         //Log.d( "MyLog" , "下個月的開始dateBlock編號為"+i);
@@ -499,6 +577,12 @@ public class CalendarActivity extends AppCompatActivity
     //左右按鈕的功能
     public void arrowLeft(View v)
     {
+        if((monthGot)==1)
+        {
+            monthGot=13;
+            yearGot-=1;
+        }
+
         Log.d("MyLog" , "Pressed Left");
 
         Intent calendarActivityIntent = new Intent(this , CalendarActivity.class);
@@ -509,11 +593,21 @@ public class CalendarActivity extends AppCompatActivity
         calendarActivityIntent.putExtra("INPUT_MONTH" , newMonthGot);
         calendarActivityIntent.putExtra("INPUT_YEAR" , newYearGot);
 
+        Log.d("ArrowLog" , "New MonthYear is "+newYearGot+"/"+newMonthGot);
+
         startActivity(calendarActivityIntent);
+
+        finish();
     }
 
     public void arrowRight(View v)
     {
+        if((monthGot)==12)
+        {
+            monthGot=0;
+            yearGot+=1;
+        }
+
         Log.d("MyLog" , "Pressed Right");
 
         Intent calendarActivityIntent = new Intent(this , CalendarActivity.class);
@@ -524,6 +618,16 @@ public class CalendarActivity extends AppCompatActivity
         calendarActivityIntent.putExtra("INPUT_MONTH" , newMonthGot);
         calendarActivityIntent.putExtra("INPUT_YEAR" , newYearGot);
 
+        Log.d("ArrowLog" , "New MonthYear is "+newYearGot+"/"+newMonthGot);
+
         startActivity(calendarActivityIntent);
+
+        finish();
+    }
+
+    private void disableArrowLeft()
+    {
+        ImageView arrowLeft = (ImageView) findViewById(R.id.LeftArrow);
+        arrowLeft.setVisibility(View.INVISIBLE);
     }
 }

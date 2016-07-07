@@ -57,7 +57,7 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity">
     <ImageView
         android:layout_width="60px"
         android:layout_height="40px"
-        android:id="@+id/imageView"
+        android:id="@+id/RightArrow"
         android:src="@drawable/arrow_right"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
@@ -67,9 +67,9 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity">
     <ImageView
         android:layout_width="60px"
         android:layout_height="40px"
-        android:id="@+id/imageView2"
+        android:id="@+id/LeftArrow"
         android:src="@drawable/arrow_left"
-        android:layout_alignTop="@+id/imageView"
+        android:layout_alignTop="@+id/RightArrow"
         android:layout_alignParentStart="true"
         android:clickable="true"
         android:onClick="arrowLeft" />

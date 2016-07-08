@@ -74,6 +74,15 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity">
         android:clickable="true"
         android:onClick="arrowLeft" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="新增提醒事項"
+        android:id="@+id/button2"
+        android:layout_toEndOf="@+id/MonthYearBlock"
+        android:layout_centerVertical="true"
+        android:textSize="20px" />
+
 </RelativeLayout>
 
 <TableLayout

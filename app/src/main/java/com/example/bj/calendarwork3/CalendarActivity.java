@@ -630,4 +630,12 @@ public class CalendarActivity extends AppCompatActivity
         ImageView arrowLeft = (ImageView) findViewById(R.id.LeftArrow);
         arrowLeft.setVisibility(View.INVISIBLE);
     }
+
+    public void startPopoutActivity(View v)
+    {
+        Log.d("MyLog" , "This should popout !");
+
+        Intent addNoteIntent = new Intent(this , AddNoteActivity.class);
+        startActivity(addNoteIntent);
+    }
 }

@@ -81,7 +81,8 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity">
         android:id="@+id/button2"
         android:layout_toEndOf="@+id/MonthYearBlock"
         android:layout_centerVertical="true"
-        android:textSize="20px" />
+        android:textSize="20px"
+        android:onClick="startPopoutActivity" />
 
 </RelativeLayout>
 

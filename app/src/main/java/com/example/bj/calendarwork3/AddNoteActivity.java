@@ -4,7 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 public class AddNoteActivity extends AppCompatActivity
 {
@@ -59,4 +61,37 @@ public class AddNoteActivity extends AppCompatActivity
         this.getWindow().setAttributes(params);
     }
 
+    public void CancelButtonClicked(View v)
+    {
+        finish();
+    }
+
+    public void AddButtonClicked(View v)
+    {
+        Log.d("NoteLog" , "AddButton Clicked !");
+
+        String noteContentToSave;
+        String noteYearToSave;
+        String noteMonthToSave;
+        String noteDateToSave;
+
+        EditText noteContent = (EditText) findViewById(R.id.NoteContent);
+        noteContentToSave = noteContent.getText().toString();
+
+        EditText noteYear = (EditText) findViewById(R.id.AddNoteYear);
+        noteYearToSave = noteYear.getText().toString();
+
+        EditText noteMonth = (EditText) findViewById(R.id.AddNoteMonth);
+        noteMonthToSave = noteMonth.getText().toString();
+
+        EditText noteDate = (EditText) findViewById(R.id.AddNoteDate);
+        noteDateToSave = noteDate.getText().toString();
+
+        Log.d("NoteLog" , "New note content : "+noteContentToSave);
+        Log.d("NoteLog" , "New note year : "+noteYearToSave);
+        Log.d("NoteLog" , "New note month : "+noteMonthToSave);
+        Log.d("NoteLog" , "New note date : "+noteDateToSave);
+
+        myDb.addNewNote( noteYearToSave , noteMonthToSave , noteDateToSave , noteContentToSave );
+    }
 }

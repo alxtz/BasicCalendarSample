@@ -40,7 +40,7 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText"
+                    android:id="@+id/NoteContent"
                     android:background="@android:color/transparent"
                     android:layout_centerVertical="true"
                     android:layout_alignParentStart="true"
@@ -68,7 +68,7 @@
                 <EditText
                     android:layout_width="100px"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText2"
+                    android:id="@+id/AddNoteYear"
                     android:layout_centerVertical="true"
                     android:layout_alignParentStart="true"
                     android:textColor="#0000A0"
@@ -81,13 +81,13 @@
                     android:text="年"
                     android:id="@+id/textView8"
                     android:layout_centerVertical="true"
-                    android:layout_toEndOf="@+id/editText2"
+                    android:layout_toEndOf="@+id/AddNoteYear"
                     android:textColor="#0000A0" />
 
                 <EditText
                     android:layout_width="100px"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText3"
+                    android:id="@+id/AddNoteMonth"
                     android:textColor="#0000A0"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/textView8"
@@ -101,12 +101,12 @@
                     android:id="@+id/textView9"
                     android:textColor="#0000A0"
                     android:layout_alignTop="@+id/textView8"
-                    android:layout_toEndOf="@+id/editText3" />
+                    android:layout_toEndOf="@+id/AddNoteMonth" />
 
                 <EditText
                     android:layout_width="100px"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText4"
+                    android:id="@+id/AddNoteDate"
                     android:textColor="#0000A0"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/textView9"
@@ -120,7 +120,7 @@
                     android:id="@+id/textView10"
                     android:textColor="#0000A0"
                     android:layout_centerVertical="true"
-                    android:layout_toEndOf="@+id/editText4" />
+                    android:layout_toEndOf="@+id/AddNoteDate" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -145,20 +145,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="取消"
-                android:id="@+id/button3"
+                android:id="@+id/CancelButton"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:textSize="20px" />
+                android:textSize="20px"
+                android:onClick="CancelButtonClicked" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="確認"
-                android:id="@+id/button4"
+                android:id="@+id/AddButton"
                 android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/button3"
-                android:textSize="20px" />
+                android:layout_toStartOf="@+id/CancelButton"
+                android:textSize="20px"
+                android:onClick="AddButtonClicked" />
 
         </RelativeLayout>
 

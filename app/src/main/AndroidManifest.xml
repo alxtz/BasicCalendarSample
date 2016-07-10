@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".CalendarActivity" />
+        <activity android:name=".CalendarActivity"
+                  android:noHistory="false"/>
 
         <activity
             android:name=".AddNoteActivity"

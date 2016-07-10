@@ -1,12 +1,14 @@
 package com.example.bj.calendarwork3;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -16,10 +18,14 @@ public class CalendarActivity extends AppCompatActivity
 {
     DatabaseHelper myDb;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        Log.d("SomeLog" , "Created");
+
         setContentView(R.layout.activity_calendar);
 
         myDb = new DatabaseHelper(this);
@@ -57,7 +63,36 @@ public class CalendarActivity extends AppCompatActivity
 
         checkDatabaseNotes();
 
-        changeNoteContent(20 , 3);
+        //changeNoteContent(20 , 3);
+    }
+
+    @Override
+    public void onRestart()
+    {
+        super.onRestart();
+        Log.d("SomeLog" , "Restarted");
+    }
+
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+        Log.d("SomeLog" , "Started");
+    }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        Log.d("SomeLog" , "Paused");
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        Log.d("SomeLog" , "Resumed");
+        checkDatabaseNotes();
     }
 
 
@@ -711,6 +746,80 @@ public class CalendarActivity extends AppCompatActivity
 
 
             Log.d( "CalendarLog" , "得到一個日期"+month+"/"+dateTextViewText);
+
+            //TODO 這邊yearGot也要調一下
+
+            if(checkTableExists("TABLE_"+Integer.toString(yearGot)+"_"+month+"_"+dateTextViewText))
+            {
+                Log.d( "CalendarLog" , "上面的table存在!");
+                int noteAmount = myDb.getTableNoteAmount("TABLE_"+Integer.toString(yearGot)+"_"+month+"_"+dateTextViewText);
+                Log.d( "CalendarLog" , "上面的table有"+Integer.toString(noteAmount)+"個項目 !" );
+
+                //如果table存在的話，我們就顯示幾條note
+
+                //先尋找到屬於那個日期的dayBlock
+                Log.d( "CalendarLog" , "上面的dayBlock為"+Integer.toString(i)+" !" );
+
+                int bar;
+                if(noteAmount>=4)
+                {
+                    bar = 4;
+                }
+                else
+                {
+                    bar = noteAmount;
+                }
+
+                Cursor tableRes = myDb.getRes("TABLE_"+Integer.toString(yearGot)+"_"+month+"_"+dateTextViewText);
+
+                /*
+                while (tableRes.moveToNext())
+                {
+                    Log.d("CalendarLog","得到一個Note : "+tableRes.getString(1));
+                }
+                */
+
+                for(int k=1; k<=bar; ++k)
+                {
+                    String useID = "Day"+Integer.toString(i)+"_Note"+Integer.toString(k);
+                    int rID = getResources().getIdentifier(useID , "id" , getPackageName());
+
+                    TextView noteText = (TextView) findViewById(rID);
+                    noteText.setVisibility(View.VISIBLE);
+
+                    tableRes.moveToNext();
+                    //Log.d("CalendarLog","得到一個Note : "+tableRes.getString(1));
+                    String rawString = tableRes.getString(1);
+                    if(rawString.length()>4)
+                    {
+                        rawString = rawString.substring(0, 4);
+                    }
+                    noteText.setText(rawString);
+                }
+
+            }
+            else
+            {
+                Log.d( "CalendarLog" , "上面的table不存在!");
+            }
+
         }
     }
+
+    private boolean checkTableExists(String tableName)
+    {
+        if(myDb.checkIfTableExists(tableName))
+        {
+            //Log.d( "CalendarLog" , "The table exists !");
+            return true;
+        }
+        else
+        {
+            //Log.d( "CalendarLog" , "The table doesn't exist !");
+            return false;
+        }
+    }
+
+
 }
+

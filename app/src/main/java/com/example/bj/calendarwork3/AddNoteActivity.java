@@ -1,5 +1,6 @@
 package com.example.bj.calendarwork3;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class AddNoteActivity extends AppCompatActivity
 {
@@ -93,5 +95,39 @@ public class AddNoteActivity extends AppCompatActivity
         Log.d("NoteLog" , "New note date : "+noteDateToSave);
 
         myDb.addNewNote( noteYearToSave , noteMonthToSave , noteDateToSave , noteContentToSave );
+
+        finish();
+    }
+
+    private void updateDatabase(String tableName , int dayBlockDay)
+    {
+        int tableLength = myDb.getTableNoteAmount(tableName);
+
+        if(tableLength>=4)
+        {
+            tableLength = 4;
+        }
+
+        Cursor tableRes = myDb.getRes(tableName);
+
+        for(int i=1; i<=tableLength; ++i)
+        {
+            String useID = "Day"+dayBlockDay+"_Note"+Integer.toString(i);
+
+            int rID = getResources().getIdentifier(useID , "id" , getPackageName());
+
+            TextView noteText = (TextView) findViewById(rID);
+
+            tableRes.moveToNext();
+
+            String rawString = tableRes.getString(1);
+
+            if(rawString.length()>4)
+            {
+                rawString = rawString.substring(0, 4);
+            }
+
+            noteText.setText(rawString);
+        }
     }
 }

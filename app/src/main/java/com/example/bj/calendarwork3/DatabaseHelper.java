@@ -2,6 +2,8 @@ package com.example.bj.calendarwork3;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -41,7 +43,14 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
         //先創建table
         String TABLE_NAME = "TABLE_"+year+"_"+month+"_"+date;
-        db.execSQL("create table "+TABLE_NAME+" (NoteID INTEGER PRIMARY KEY AUTOINCREMENT,NoteContent TEXT)");
+        if(checkIfTableExists(TABLE_NAME)==true)
+        {
+
+        }
+        else
+        {
+            db.execSQL("create table "+TABLE_NAME+" (NoteID INTEGER PRIMARY KEY AUTOINCREMENT,NoteContent TEXT)");
+        }
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2 , noteContent);
@@ -49,8 +58,45 @@ public class DatabaseHelper extends SQLiteOpenHelper
         db.insert(TABLE_NAME , null , contentValues);
     }
 
-    public void checkIfTableExists(String tableName)
+    public boolean checkIfTableExists(String tableName)
     {
+        SQLiteDatabase db = this.getWritableDatabase();
 
+        try {
+            db.rawQuery("SELECT * FROM " + tableName , null);
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
+    public int getTableNoteAmount(String tableName)
+    {
+        //To Query Data
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        //The Table Instance
+        Cursor res = db.rawQuery("SELECT * FROM "+tableName , null);
+
+        int noteAmount = 0;
+
+        while(res.moveToNext())
+        {
+            Log.d( "CalendarLog" , "得到一條note");
+            noteAmount++;
+        }
+
+        return noteAmount;
+    }
+
+    public Cursor getRes(String tableName)
+    {
+        //To Query Data
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        //The Table Instance
+        Cursor res = db.rawQuery("SELECT * FROM "+tableName , null);
+
+        return res;
     }
 }

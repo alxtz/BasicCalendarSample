@@ -48,6 +48,8 @@ public class CalendarActivity extends AppCompatActivity
         {
             disableArrowLeft();
         }
+
+        changeNoteContent(20 , 3);
     }
 
 
@@ -637,5 +639,17 @@ public class CalendarActivity extends AppCompatActivity
 
         Intent addNoteIntent = new Intent(this , AddNoteActivity.class);
         startActivity(addNoteIntent);
+    }
+
+    public void changeNoteContent(int dayBlock , int noteIndex)
+    {
+        String foo = "Day"+Integer.toString(dayBlock)+"_Note"+Integer.toString(noteIndex);
+
+        Log.d( "CalendarLog" , "使用的ID為"+foo);
+
+        int resID = getResources().getIdentifier(foo , "id" , getPackageName());
+
+        TextView someDateText = (TextView) findViewById(resID);
+        someDateText.setText("妹妹吃飯");
     }
 }

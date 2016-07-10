@@ -14,11 +14,15 @@ import android.widget.TextView;
 
 public class CalendarActivity extends AppCompatActivity
 {
+    DatabaseHelper myDb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+
+        myDb = new DatabaseHelper(this);
 
         monthGot = Integer.parseInt(getIntent().getStringExtra("INPUT_MONTH"));
         yearGot = Integer.parseInt(getIntent().getStringExtra("INPUT_YEAR"));
@@ -48,6 +52,10 @@ public class CalendarActivity extends AppCompatActivity
         {
             disableArrowLeft();
         }
+
+        hideAllNotes();
+
+        checkDatabaseNotes();
 
         changeNoteContent(20 , 3);
     }
@@ -641,6 +649,7 @@ public class CalendarActivity extends AppCompatActivity
         startActivity(addNoteIntent);
     }
 
+
     public void changeNoteContent(int dayBlock , int noteIndex)
     {
         String foo = "Day"+Integer.toString(dayBlock)+"_Note"+Integer.toString(noteIndex);
@@ -650,8 +659,58 @@ public class CalendarActivity extends AppCompatActivity
         int resID = getResources().getIdentifier(foo , "id" , getPackageName());
 
         TextView someDateText = (TextView) findViewById(resID);
+        someDateText.setVisibility(View.VISIBLE);
         someDateText.setText("妹妹吃飯");
     }
 
-    
+    public void hideAllNotes()
+    {
+        for(int i = 1; i<=42; ++i)
+        {
+            for(int j = 1; j<=4; ++j)
+            {
+                String foo = "Day"+Integer.toString(i)+"_Note"+Integer.toString(j);
+
+                int resID = getResources().getIdentifier(foo , "id" , getPackageName());
+
+                TextView someDateText = (TextView) findViewById(resID);
+
+                someDateText.setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+
+    public void checkDatabaseNotes()
+    {
+        //先run過所有日期
+        for(int i=1; i<=42; ++i)
+        {
+            String dateTextViewID = "DateText"+Integer.toString(i);
+
+            int resID = getResources().getIdentifier(dateTextViewID , "id" , getPackageName());
+
+            TextView someDateText = (TextView) findViewById(resID);
+
+            String dateTextViewText = someDateText.getText().toString();
+
+            String month;
+
+            if(i<=7 && Integer.parseInt(dateTextViewText)>=20 )
+            {
+                month = Integer.toString(monthGot-1);
+            }
+            else if(i>=25 && Integer.parseInt(dateTextViewText)<15)
+            {
+                month = Integer.toString(monthGot+1);
+            }
+            else
+            {
+                month = Integer.toString(monthGot);
+            }
+
+
+
+            Log.d( "CalendarLog" , "得到一個日期"+month+"/"+dateTextViewText);
+        }
+    }
 }

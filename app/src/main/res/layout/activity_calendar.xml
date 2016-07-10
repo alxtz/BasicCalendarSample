@@ -978,7 +978,7 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="170px"
+            android:layout_height="50px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock8" >
 
@@ -1073,7 +1073,7 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="170px"
+            android:layout_height="50px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock9" >
 
@@ -1168,7 +1168,7 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="170px"
+            android:layout_height="50px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock10" >
 
@@ -1263,7 +1263,7 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="170px"
+            android:layout_height="50px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock11" >
 
@@ -1358,7 +1358,7 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="170px"
+            android:layout_height="50px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock12" >
 
@@ -1453,7 +1453,7 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="170px"
+            android:layout_height="50px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock13" >
 
@@ -1548,7 +1548,7 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="170px"
+            android:layout_height="50px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock14" >
 
@@ -1641,23 +1641,17 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_height="50px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock15" >
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:background="#000000" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout35">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -1672,19 +1666,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout19" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout35"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock16" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day15_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day15_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day15_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day15_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day15_Note2"
+                    android:layout_alignStart="@+id/Day15_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day15_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day15_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1694,11 +1725,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout19" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="50px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock16" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout37">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -1713,19 +1761,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout21" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout37"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock17" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day16_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day16_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day16_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day16_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day16_Note2"
+                    android:layout_alignStart="@+id/Day16_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day16_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day16_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1735,11 +1820,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout21" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="50px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock17" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout39">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -1754,19 +1856,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout23" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout39"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock18" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day17_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day17_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day17_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day17_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day17_Note2"
+                    android:layout_alignStart="@+id/Day17_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day17_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day17_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1776,11 +1915,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout23" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="50px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock18" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout41">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -1795,19 +1951,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout25" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout41"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock19" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day18_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day18_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day18_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day18_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day18_Note2"
+                    android:layout_alignStart="@+id/Day18_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day18_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day18_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1817,11 +2010,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout25" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="50px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock19" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout43">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -1836,19 +2046,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout27" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout43"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock20" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day19_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day19_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day19_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day19_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day19_Note2"
+                    android:layout_alignStart="@+id/Day19_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day19_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day19_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1858,11 +2105,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout27" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="50px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock20" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout44">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -1877,19 +2141,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout29" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout44"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock21" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day20_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day20_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day20_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day20_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day20_Note2"
+                    android:layout_alignStart="@+id/Day20_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day20_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day20_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1899,11 +2200,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout29" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="50px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock21" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout46">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -1916,6 +2234,66 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                     android:textIsSelectable="false"
                     android:textColor="#000000" />
             </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout46"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day21_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day21_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day21_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day21_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day21_Note2"
+                    android:layout_alignStart="@+id/Day21_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day21_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day21_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:background="#000000" />
+
         </RelativeLayout>
     </TableRow>
 
@@ -1926,23 +2304,17 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_height="200px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock22" >
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:background="#000000" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout48">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -1957,19 +2329,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout32" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout48"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock23" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day22_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day22_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day22_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day22_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day22_Note2"
+                    android:layout_alignStart="@+id/Day22_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day22_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day22_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1979,11 +2388,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout32" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="200px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock23" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout50">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -1998,19 +2424,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout34" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout50"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock24" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day23_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day23_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day23_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day23_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day23_Note2"
+                    android:layout_alignStart="@+id/Day23_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day23_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day23_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -2020,11 +2483,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout34" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="200px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock24" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout52">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2039,19 +2519,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout36" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout52"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock25" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day24_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day24_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day24_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day24_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day24_Note2"
+                    android:layout_alignStart="@+id/Day24_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day24_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day24_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -2061,11 +2578,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout36" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="200px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock25" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout54">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2080,19 +2614,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout38" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout54"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock26" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day25_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day25_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day25_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day25_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day25_Note2"
+                    android:layout_alignStart="@+id/Day25_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day25_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day25_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -2102,11 +2673,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout38" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="200px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock26" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout56">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2121,19 +2709,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout40" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout56"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock27" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day26_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day26_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day26_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day26_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day26_Note2"
+                    android:layout_alignStart="@+id/Day26_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day26_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day26_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -2143,11 +2768,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout40" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="200px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock27" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout57">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2162,19 +2804,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout42" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout57"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock28" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day27_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day27_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day27_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day27_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day27_Note2"
+                    android:layout_alignStart="@+id/Day27_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day27_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day27_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -2184,11 +2863,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout42" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="200px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock28" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout59">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2201,6 +2897,66 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                     android:textIsSelectable="false"
                     android:textColor="#000000" />
             </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout59"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day28_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day28_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day28_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day28_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day28_Note2"
+                    android:layout_alignStart="@+id/Day28_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day28_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day28_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:background="#000000" />
+
         </RelativeLayout>
     </TableRow>
 
@@ -2211,23 +2967,17 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_height="200px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock29" >
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:background="#000000" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout61">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2242,19 +2992,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout45" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout61"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock30" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day29_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day29_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day29_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day29_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day29_Note2"
+                    android:layout_alignStart="@+id/Day29_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day29_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day29_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -2264,11 +3051,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout45" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="200px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock30" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout63">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2283,19 +3087,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout47" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout63"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock31" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day30_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day30_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day30_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day30_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day30_Note2"
+                    android:layout_alignStart="@+id/Day30_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day30_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day30_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -2305,11 +3146,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout47" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="200px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock31" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout65">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2324,19 +3182,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout49" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout65"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock32" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day31_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day31_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day31_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day31_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day31_Note2"
+                    android:layout_alignStart="@+id/Day31_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day31_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day31_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -2346,11 +3241,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout49" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="200px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock32" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout67">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2365,19 +3277,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout51" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout67"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock33" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day32_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day32_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day32_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day32_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day32_Note2"
+                    android:layout_alignStart="@+id/Day32_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day32_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day32_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -2387,11 +3336,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout51" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="200px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock33" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout69">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2406,19 +3372,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout53" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout69"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock34" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day33_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day33_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day33_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day33_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day33_Note2"
+                    android:layout_alignStart="@+id/Day33_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day33_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day33_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -2428,11 +3431,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout53" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="200px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock34" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout70">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2447,19 +3467,56 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:background="#000000"
-                android:id="@+id/relativeLayout55" />
-        </RelativeLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout70"
+                android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:background="#FFFFFF"
-            android:id="@+id/DayBlock35" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day34_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day34_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day34_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day34_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day34_Note2"
+                    android:layout_alignStart="@+id/Day34_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day34_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day34_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -2469,11 +3526,28 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:background="#000000" />
 
             <RelativeLayout
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#000000"
+                android:id="@+id/relativeLayout55" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100px"
+            android:layout_height="200px"
+            android:background="#FFFFFF"
+            android:id="@+id/DayBlock35" >
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout71">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2486,6 +3560,66 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                     android:textIsSelectable="false"
                     android:textColor="#000000" />
             </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout71"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day35_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day35_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day35_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day35_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day35_Note2"
+                    android:layout_alignStart="@+id/Day35_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day35_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day35_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:background="#000000" />
+
         </RelativeLayout>
     </TableRow>
 
@@ -2496,7 +3630,7 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_height="200px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock36" >
 
@@ -2505,7 +3639,8 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout72">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2520,17 +3655,70 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout72"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day36_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day36_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day36_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day36_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day36_Note2"
+                    android:layout_alignStart="@+id/Day36_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day36_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day36_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="1px"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:background="#000000"
                 android:id="@+id/relativeLayout58" />
+
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_height="200px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock37" >
 
@@ -2539,7 +3727,8 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout73">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2554,17 +3743,70 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout73"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day37_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day37_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day37_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day37_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day37_Note2"
+                    android:layout_alignStart="@+id/Day37_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day37_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day37_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="1px"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:background="#000000"
                 android:id="@+id/relativeLayout60" />
+
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_height="200px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock38" >
 
@@ -2573,7 +3815,8 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout74">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2588,17 +3831,70 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout74"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day38_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day38_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day38_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day38_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day38_Note2"
+                    android:layout_alignStart="@+id/Day38_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day38_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day38_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="1px"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:background="#000000"
                 android:id="@+id/relativeLayout62" />
+
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_height="200px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock39" >
 
@@ -2607,7 +3903,8 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout75">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2622,17 +3919,70 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout75"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day39_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day39_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day39_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day39_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day39_Note2"
+                    android:layout_alignStart="@+id/Day39_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day39_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day39_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="1px"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:background="#000000"
                 android:id="@+id/relativeLayout64" />
+
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_height="200px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock40" >
 
@@ -2641,7 +3991,8 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout76">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2656,17 +4007,70 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout76"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day40_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day40_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day40_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day40_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day40_Note2"
+                    android:layout_alignStart="@+id/Day40_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day40_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day40_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="1px"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:background="#000000"
                 android:id="@+id/relativeLayout66" />
+
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_height="200px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock41" >
 
@@ -2675,7 +4079,8 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout77">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2690,17 +4095,70 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
             </RelativeLayout>
 
             <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout77"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day41_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day41_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day41_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day41_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day41_Note2"
+                    android:layout_alignStart="@+id/Day41_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day41_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day41_Note3"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="1px"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:background="#000000"
                 android:id="@+id/relativeLayout68" />
+
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_height="200px"
             android:background="#FFFFFF"
             android:id="@+id/DayBlock42" >
 
@@ -2709,7 +4167,8 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                 android:layout_height="20px"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:background="#C0C0C0" >
+                android:background="#C0C0C0"
+                android:id="@+id/relativeLayout78">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -2721,6 +4180,58 @@ tools:context="com.example.bj.calendarwork3.CalendarActivity"
                     android:textSize="15px"
                     android:textIsSelectable="false"
                     android:textColor="#000000" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#00A000"
+                android:layout_below="@+id/relativeLayout78"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀機房"
+                    android:id="@+id/Day42_Note1"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀砲房"
+                    android:id="@+id/Day42_Note2"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day42_Note1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀行房"
+                    android:id="@+id/Day42_Note3"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day42_Note2"
+                    android:layout_alignStart="@+id/Day42_Note2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40px"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="參觀大房"
+                    android:id="@+id/Day42_Note4"
+                    android:textSize="20px"
+                    android:textColor="#FFFFFF"
+                    android:layout_below="@+id/Day42_Note3"
+                    android:layout_centerHorizontal="true" />
             </RelativeLayout>
         </RelativeLayout>
     </TableRow>

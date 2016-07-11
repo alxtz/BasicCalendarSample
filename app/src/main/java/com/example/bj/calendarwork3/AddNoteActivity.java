@@ -60,6 +60,7 @@ public class AddNoteActivity extends AppCompatActivity
         //params.width = (int) (screenWidth*0.9);
         params.width = (int) (720*0.9);
         params.height = 260;
+        params.y = -100;
         this.getWindow().setAttributes(params);
     }
 

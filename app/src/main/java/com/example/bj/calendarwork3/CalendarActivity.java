@@ -64,6 +64,8 @@ public class CalendarActivity extends AppCompatActivity
         checkDatabaseNotes();
 
         //changeNoteContent(20 , 3);
+
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 
     @Override
